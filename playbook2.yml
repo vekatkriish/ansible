@@ -1,7 +1,9 @@
 ---
  - hosts: web
+   order: reverse_inventory
+   gather_facts: false
    remote_user: vagrant
-   task:
-      - name: to the status of the servers
-        ping:
-
+   tasks:
+    - name: test_connection
+      ping:
+      remote_user: vagrant
