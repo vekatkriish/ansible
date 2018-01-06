@@ -1,9 +1,0 @@
----
-- hosts: web
-  order: reverse_inventory
-  gather_facts: false
-  remote_user: vagrant
-  tasks:
-  - name: test_connection
-    ping:
-    remote_user: vagrant
