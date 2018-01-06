@@ -1,0 +1,10 @@
+---
+- hosts: all
+  gather_facts: no
+  remote_user: kriish
+  tasks:
+
+  - name: install ssh key
+    authorized_key: user=kriish 
+                    key="{{ lookup('file', '/home/udevops/.ssh/id_rsa.pub') }}" 
+                    state=present
